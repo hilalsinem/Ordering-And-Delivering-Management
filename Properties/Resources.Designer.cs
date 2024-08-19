@@ -183,36 +183,6 @@ namespace OrderAndDeliveryManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rotate_arrow {
-            get {
-                object obj = ResourceManager.GetObject("rotate-arrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rotate_arrow1 {
-            get {
-                object obj = ResourceManager.GetObject("rotate-arrow1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap small_icon {
-            get {
-                object obj = ResourceManager.GetObject("small_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap small_icon1 {
             get {
                 object obj = ResourceManager.GetObject("small_icon1", resourceCulture);
@@ -229,13 +199,39 @@ namespace OrderAndDeliveryManagement.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tracking_icon1 {
-            get {
-                object obj = ResourceManager.GetObject("tracking-icon1", resourceCulture);
+        internal static System.Drawing.Bitmap tracking_icon1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("tracking_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap small_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("small_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rotate_arrow1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("rotate_arrow1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

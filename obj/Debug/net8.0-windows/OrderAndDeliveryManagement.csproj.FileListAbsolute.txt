@@ -74,3 +74,4 @@ C:\Users\hilal sinem\.dotnet\dotnetProjects\OrderAndDeliveryManagement\obj\Debug
 C:\Users\hilal sinem\.dotnet\dotnetProjects\OrderAndDeliveryManagement\obj\Debug\net8.0-windows\OrderAndDeliveryManagement.CustomMessageBox.resources
 C:\Users\hilal sinem\.dotnet\dotnetProjects\OrderAndDeliveryManagement\obj\Debug\net8.0-windows\OrderAndDeliveryManagement.DeliverySellerUserControl.resources
 C:\Users\hilal sinem\.dotnet\dotnetProjects\OrderAndDeliveryManagement\obj\Debug\net8.0-windows\OrderAndDeliveryManagement.SellerDetails.resources
+C:\Users\hilal sinem\.dotnet\dotnetProjects\OrderAndDeliveryManagement\obj\Debug\net8.0-windows\OrderAndDeliveryManagement.sourcelink.json
