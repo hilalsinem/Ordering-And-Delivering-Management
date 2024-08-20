@@ -44,6 +44,7 @@ namespace OrderAndDeliveryManagement
             listView1.Columns.Add("Product Name", 250); // Width in pixels
             listView1.Columns.Add("Quantity", 200);
             listView1.Columns.Add("Price", 200);
+            listView1.Columns.Add("Per", 100);
         }
 
         public void LoadOrderDetails()
@@ -64,36 +65,43 @@ namespace OrderAndDeliveryManagement
                         //listView1.Items.Clear();
 
 
-                            // Move back to the first row to load product details
-                          
-
-                            while (reader.Read())
-                            {
-                                string productName = reader["Name"].ToString();
-                                string quantity = reader["Quantity"].ToString();
-                                string price = reader["Price"].ToString();
-
-                                Address = reader["Address"].ToString();
-                                PaymentMethod = reader["PaymentMethod"].ToString();
-                                label5.Text = PaymentMethod;
-                                label6.Text = Address;
-
-                                // Create a new ListViewItem with product details
-                                ListViewItem item = new ListViewItem(productName);
-                                item.SubItems.Add(quantity);
-                                item.SubItems.Add(price);
+                        // Move back to the first row to load product details
 
 
-                                listView1.Items.Add(item);
-                            }
+                        while (reader.Read())
+                        {
+                            string productName = reader["Name"].ToString();
+                            string quantity = reader["Quantity"].ToString();
+                            string price = reader["Price"].ToString();
+                            string per = reader["Per"].ToString();
+
+                            Address = reader["Address"].ToString();
+                            PaymentMethod = reader["PaymentMethod"].ToString();
+                            label5.Text = PaymentMethod;
+                            label6.Text = Address;
+
+                            // Create a new ListViewItem with product details
+                            ListViewItem item = new ListViewItem(productName);
+                            item.SubItems.Add(quantity);
+                            item.SubItems.Add(price);
+                            item.SubItems.Add(per);
+
+
+                            listView1.Items.Add(item);
                         }
                     }
-                
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while loading order details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -76,10 +76,12 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.tracking_icon;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(35, 31);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(129, 120);
+            pictureBox1.Size = new Size(64, 64);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 

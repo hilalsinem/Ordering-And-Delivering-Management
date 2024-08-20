@@ -153,10 +153,12 @@
             flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(payment_panel);
             flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(325, 200);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1752, 1114);
             flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel3
@@ -296,7 +298,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.cashless_payment__1_;
-            pictureBox1.Location = new Point(129, 27);
+            pictureBox1.Location = new Point(55, 27);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(129, 135);
             pictureBox1.TabIndex = 5;
@@ -304,7 +306,7 @@
             // 
             // confirm_button
             // 
-            confirm_button.BackgroundImage = Properties.Resources.order_now;
+            confirm_button.BackgroundImage = Properties.Resources.order_now_icon;
             confirm_button.BackgroundImageLayout = ImageLayout.Stretch;
             confirm_button.FlatStyle = FlatStyle.Flat;
             confirm_button.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -322,7 +324,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(231, 231, 222);
-            label3.Location = new Point(378, 78);
+            label3.Location = new Point(262, 77);
             label3.Name = "label3";
             label3.Size = new Size(119, 38);
             label3.TabIndex = 3;
@@ -343,6 +345,7 @@
             radioButton2.Text = "Cash";
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.Visible = false;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged_1;
             radioButton2.Click += radioButton2_CheckedChanged;
             // 
             // radioButton1

@@ -34,7 +34,11 @@ namespace OrderAndDeliveryManagement
             get => comboBox1.SelectedItem?.ToString();
             set => comboBox1.SelectedItem = value;
         }
-
+        public Image ProductImage
+        {
+            get => pictureBox1.Image;
+            set => pictureBox1.Image = value;
+        }
         public bool IsRadioButtonChecked
         {
             get { return radioButton1.Checked; }

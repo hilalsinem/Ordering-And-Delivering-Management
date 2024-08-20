@@ -88,7 +88,7 @@ namespace OrderAndDeliveryManagement
                         ProductName = reader["Name"].ToString(),
                         ProductDescription = reader["Description"].ToString(),
                         ProductPrice = Convert.ToDecimal(reader["Price"]),
-                        ProductImage = Resources.small_icon1 // Assuming you have a default icon for products
+                        per = reader["Per"].ToString(),
                     };
 
 
@@ -146,7 +146,8 @@ namespace OrderAndDeliveryManagement
                         username = reader2["username"].ToString(),
                         ProductName = reader2["Name"].ToString(),
                         Quantity = Convert.ToInt32(reader2["Quantity"]),
-                        ProductPrice = Convert.ToDecimal(reader2["Price"])
+                        ProductPrice = Convert.ToDecimal(reader2["Price"]),
+                        per = reader2["Per"].ToString(),
 
                     };
 
@@ -221,7 +222,8 @@ namespace OrderAndDeliveryManagement
                     username = reader["username"].ToString(),
                     ProductName = reader["Name"].ToString(),
                     Quantity = Convert.ToInt32(reader["Quantity"]),
-                    ProductPrice = Convert.ToDecimal(reader["Price"])
+                    ProductPrice = Convert.ToDecimal(reader["Price"]),
+                    per = reader["Per"].ToString(),
 
                 };
 
@@ -274,12 +276,28 @@ namespace OrderAndDeliveryManagement
                     TotalPrice = Convert.ToDecimal(reader2["TotalPrice"]),
                     OrderDate = reader2["OrderDate"].ToString(),
                     Status = reader2["Status"].ToString(),
-
                 };
+
+                // Check if the order status is "Delivered"
+                if (orderTable.Status == "Delivered")
+                {
+                    orderTable.ProductImage = Properties.Resources.delivered_icon;
+                }
+                else if (orderTable.Status == "Shipped")
+                {
+                    orderTable.ProductImage = Properties.Resources.shipped_icon;
+                }
+                else if (orderTable.Status == "Placed")
+                {
+                    orderTable.ProductImage = Properties.Resources.order128;
+                }
+                else
+                {
+                    orderTable.ProductImage = Properties.Resources.processing_icon;
+                }
 
                 flowLayoutPanel1.Controls.Add(orderTable);
             }
-
             conn.Close();
         }
 
@@ -318,7 +336,7 @@ namespace OrderAndDeliveryManagement
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Image InfoIcon = Properties.Resources.informative;
+            Image InfoIcon = Properties.Resources.info_icon;
             CustomMessageBox.Show("Information", "Your payment will process when your order is delivered", InfoIcon);
         }
 
@@ -375,7 +393,7 @@ namespace OrderAndDeliveryManagement
             }
             else
             {
-                Image helpIcon = Properties.Resources.help;
+                Image helpIcon = Properties.Resources.help_icon;
                 CustomMessageBox.Show("Alert", "Please select a payment method before confirming.", helpIcon);
                 return null; // Exit the method if no option is selected.
             }
@@ -408,7 +426,7 @@ namespace OrderAndDeliveryManagement
             string address = (string)cmd3.ExecuteScalar();
             conn.Close();
 
-          
+
 
             decimal totalPrice = 0m;
 
@@ -423,7 +441,7 @@ namespace OrderAndDeliveryManagement
             SqlDataReader reader2 = query.ExecuteReader();
 
 
-            List<Tuple<string, int, decimal>> products = new List<Tuple<string, int, decimal>>();
+            List<Tuple<string, int, decimal, string>> products = new List<Tuple<string, int, decimal, string>>();
 
 
             while (reader2.Read())
@@ -434,15 +452,17 @@ namespace OrderAndDeliveryManagement
                     username = reader2["username"].ToString(),
                     ProductName = reader2["Name"].ToString(),
                     Quantity = Convert.ToInt32(reader2["Quantity"]),
-                    ProductPrice = Convert.ToDecimal(reader2["Price"])
+                    ProductPrice = Convert.ToDecimal(reader2["Price"]),
+                    per = reader2["Per"].ToString(),
 
                 };
 
                 string productName = reader2["Name"].ToString();
                 int quantity = Convert.ToInt32(reader2["Quantity"]);
                 decimal price = Convert.ToDecimal(reader2["Price"]);
+                string per = reader2["Per"].ToString();
 
-                products.Add(new Tuple<string, int, decimal>(productName, quantity, price));
+                products.Add(new Tuple<string, int, decimal, string>(productName, quantity, price, per));
 
                 totalPrice += orderTable.ProductPrice * orderTable.Quantity;
 
@@ -454,7 +474,7 @@ namespace OrderAndDeliveryManagement
 
             foreach (var product in products)
             {
-                string insertQuery = "INSERT INTO OrderDetailsTable (Id, Name, Quantity, Price, Address, PaymentMethod) VALUES (@Id, @Name, @Quantity, @Price, @Address, @PaymentMethod)";
+                string insertQuery = "INSERT INTO OrderDetailsTable (Id, Name, Quantity, Price, Per, Address, PaymentMethod) VALUES (@Id, @Name, @Quantity, @Price, @Per, @Address, @PaymentMethod)";
                 using (SqlCommand cmd11 = new SqlCommand(insertQuery, conn))
                 {
                     conn.Open();
@@ -462,6 +482,7 @@ namespace OrderAndDeliveryManagement
                     cmd11.Parameters.AddWithValue("@Name", product.Item1);       // Product Name
                     cmd11.Parameters.AddWithValue("@Quantity", product.Item2);   // Quantity
                     cmd11.Parameters.AddWithValue("@Price", product.Item3);      // Price
+                    cmd11.Parameters.AddWithValue("@Per", product.Item4);
                     cmd11.Parameters.AddWithValue("@Address", address);
                     cmd11.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
                     cmd11.ExecuteNonQuery();
@@ -498,7 +519,7 @@ namespace OrderAndDeliveryManagement
             string message = "Thank you. We have received your order. You can track your order from 'MY ORDERS' page";
             string title = "SUCCESSFUL ORDER";
 
-            Image partyIcon = Properties.Resources.party_popper;
+            Image partyIcon = Properties.Resources.confetti;
             CustomMessageBox.Show(title, message, partyIcon);
 
         }
@@ -527,6 +548,11 @@ namespace OrderAndDeliveryManagement
         private void refresh_button_Click(object sender, EventArgs e)
         {
             LoadCartItems();
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

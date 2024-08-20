@@ -49,6 +49,13 @@ namespace OrderAndDeliveryManagement
             set => label4.Text = value.ToString();
         }
 
+        public string per
+        {
+            get => label6.Text;
+            set => label6.Text = value.ToString();
+
+        }
+
 
         private void OrderUserControl_Load(object sender, EventArgs e)
         {
@@ -56,6 +63,11 @@ namespace OrderAndDeliveryManagement
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

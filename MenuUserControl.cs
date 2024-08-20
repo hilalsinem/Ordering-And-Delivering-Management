@@ -65,17 +65,26 @@ namespace OrderAndDeliveryManagement
 
                 else
                 {
+                    con.Open();
+
+                    SqlCommand cmd2 = new SqlCommand ("SELECT Per FROM ProductTable WHERE Name = @Name",con);
+                    cmd2.Parameters.AddWithValue("@Name", productName);
+                    string per = (string)cmd2.ExecuteScalar();
+                    label6.Text = per;
+                    con.Close();
+
                     Image partyIcon = Properties.Resources.party_popper;
 
                     CustomMessageBox.Show("SUCCESSFUL", "Item is added to yor cart. You can view items and complete your order from your cart menu", partyIcon);
 
                     // Insert the new product into the database
                     con.Open();
-                    SqlCommand cnn = new SqlCommand("Insert into CartTable values (@username, @Name, @Price, @Quantity)", con);
+                    SqlCommand cnn = new SqlCommand("Insert into CartTable values (@username, @Name, @Price, @Per, @Quantity)", con);
                     cnn.Parameters.AddWithValue("@username", username);
                     cnn.Parameters.AddWithValue("@Name", productName);
                     cnn.Parameters.AddWithValue("@Price", decimal.Parse(label3.Text));
                     cnn.Parameters.AddWithValue("@Quantity", comboBox1.Text);
+                    cnn.Parameters.AddWithValue("@Per", per);
                     cnn.ExecuteNonQuery();
 
                 }
@@ -131,6 +140,11 @@ namespace OrderAndDeliveryManagement
             get => label1.Text;
             set => label1.Text = value;
         }
+        public string per
+        {
+            get => label6.Text;
+            set => label6.Text = value;
+        }
 
         public string ProductDescription
         {
@@ -162,6 +176,11 @@ namespace OrderAndDeliveryManagement
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

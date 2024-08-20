@@ -45,6 +45,13 @@ namespace OrderAndDeliveryManagement
             set => label3.Text = value.ToString();
         }
 
+        public string per
+        {
+            get => label8.Text;
+            set => label8.Text = value;
+        }
+
+
         public Image ProductImage
         {
             get => pictureBox1.Image;

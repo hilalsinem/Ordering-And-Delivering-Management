@@ -77,7 +77,7 @@
             label6.BackColor = Color.FromArgb(205, 239, 255);
             label6.Font = new Font("Lucida Fax", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(15, 48, 66);
-            label6.Location = new Point(671, 484);
+            label6.Location = new Point(670, 525);
             label6.Name = "label6";
             label6.Size = new Size(510, 245);
             label6.TabIndex = 6;
@@ -88,7 +88,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(231, 231, 222);
-            label3.Location = new Point(146, 551);
+            label3.Location = new Point(146, 626);
             label3.Name = "label3";
             label3.Size = new Size(280, 43);
             label3.TabIndex = 7;
@@ -99,7 +99,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Fax", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(231, 231, 222);
-            label4.Location = new Point(146, 810);
+            label4.Location = new Point(146, 873);
             label4.Name = "label4";
             label4.Size = new Size(345, 43);
             label4.TabIndex = 8;
@@ -111,7 +111,7 @@
             label5.BackColor = Color.FromArgb(205, 239, 255);
             label5.Font = new Font("Lucida Fax", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(15, 48, 66);
-            label5.Location = new Point(838, 816);
+            label5.Location = new Point(851, 873);
             label5.Name = "label5";
             label5.Size = new Size(116, 37);
             label5.TabIndex = 9;
@@ -127,6 +127,7 @@
             listView1.Size = new Size(710, 245);
             listView1.TabIndex = 10;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // SellerDetails
             // 

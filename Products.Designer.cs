@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label4 = new Label();
             label1 = new Label();
@@ -41,6 +41,8 @@
             button1 = new Button();
             button3 = new Button();
             dataGridView1 = new DataGridView();
+            label5 = new Label();
+            textBox3 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -73,7 +75,7 @@
             label1.BackColor = Color.FromArgb(0, 136, 145);
             label1.Font = new Font("Lucida Console", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Info;
-            label1.Location = new Point(339, 342);
+            label1.Location = new Point(344, 264);
             label1.Name = "label1";
             label1.Size = new Size(293, 37);
             label1.TabIndex = 1;
@@ -85,7 +87,7 @@
             label2.BackColor = Color.FromArgb(0, 136, 145);
             label2.Font = new Font("Lucida Console", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Info;
-            label2.Location = new Point(408, 489);
+            label2.Location = new Point(420, 374);
             label2.Name = "label2";
             label2.Size = new Size(132, 37);
             label2.TabIndex = 2;
@@ -108,7 +110,7 @@
             textBox1.BackColor = Color.FromArgb(215, 231, 222);
             textBox1.Font = new Font("Lucida Fax", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.ForeColor = Color.FromArgb(15, 48, 66);
-            textBox1.Location = new Point(798, 340);
+            textBox1.Location = new Point(798, 259);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(412, 42);
             textBox1.TabIndex = 4;
@@ -118,7 +120,7 @@
             textBox2.BackColor = Color.FromArgb(215, 231, 222);
             textBox2.Font = new Font("Lucida Fax", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox2.ForeColor = Color.FromArgb(15, 48, 66);
-            textBox2.Location = new Point(868, 475);
+            textBox2.Location = new Point(873, 373);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(264, 42);
             textBox2.TabIndex = 5;
@@ -164,23 +166,23 @@
             // 
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.BackgroundColor = Color.FromArgb(215, 231, 222);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(215, 231, 222);
-            dataGridViewCellStyle1.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 48, 87);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(215, 231, 222);
+            dataGridViewCellStyle3.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(15, 48, 87);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Info;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(215, 231, 222);
-            dataGridViewCellStyle2.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(15, 48, 87);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(215, 231, 222);
+            dataGridViewCellStyle4.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(15, 48, 87);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.Dock = DockStyle.Bottom;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(0, 925);
@@ -191,12 +193,36 @@
             dataGridView1.TabIndex = 12;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(0, 136, 145);
+            label5.Font = new Font("Lucida Console", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Info;
+            label5.Location = new Point(440, 478);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 37);
+            label5.TabIndex = 13;
+            label5.Text = "Per";
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(215, 231, 222);
+            textBox3.Font = new Font("Lucida Fax", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox3.ForeColor = Color.FromArgb(15, 48, 66);
+            textBox3.Location = new Point(873, 477);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(264, 42);
+            textBox3.TabIndex = 14;
+            // 
             // Products
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 136, 145);
             ClientSize = new Size(1758, 1225);
+            Controls.Add(textBox3);
+            Controls.Add(label5);
             Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(button1);
@@ -230,6 +256,7 @@
         private Button button1;
         private Button button3;
         private DataGridView dataGridView1;
-
+        private Label label5;
+        private TextBox textBox3;
     }
 }

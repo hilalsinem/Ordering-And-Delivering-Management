@@ -45,6 +45,12 @@ namespace OrderAndDeliveryManagement
             set => label4.Text = value.ToString();
         }
 
+        public string per
+        {
+            get => label6.Text;
+            set => label6.Text = value;
+        }
+
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             string productName = label2.Text;
@@ -95,6 +101,11 @@ namespace OrderAndDeliveryManagement
         }
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

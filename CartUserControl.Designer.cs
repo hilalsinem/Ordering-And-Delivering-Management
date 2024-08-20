@@ -64,7 +64,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1561, 116);
+            tableLayoutPanel1.Size = new Size(1561, 125);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -73,7 +73,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(231, 231, 222);
-            label1.Location = new Point(263, 39);
+            label1.Location = new Point(263, 43);
             label1.Name = "label1";
             label1.Size = new Size(119, 38);
             label1.TabIndex = 1;
@@ -85,7 +85,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(231, 231, 222);
-            label2.Location = new Point(692, 39);
+            label2.Location = new Point(692, 43);
             label2.Name = "label2";
             label2.Size = new Size(119, 38);
             label2.TabIndex = 2;
@@ -97,7 +97,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(231, 231, 222);
-            label3.Location = new Point(1100, 39);
+            label3.Location = new Point(1100, 43);
             label3.Name = "label3";
             label3.Size = new Size(119, 38);
             label3.TabIndex = 3;
@@ -105,10 +105,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.small_icon1;
+            pictureBox1.Image = Properties.Resources.my_cart;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(121, 110);
+            pictureBox1.Size = new Size(127, 119);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
@@ -116,7 +116,7 @@
             // 
             radioButton1.Anchor = AnchorStyles.None;
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(1506, 45);
+            radioButton1.Location = new Point(1506, 49);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(27, 26);
             radioButton1.TabIndex = 0;
@@ -130,7 +130,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(231, 231, 222);
-            label4.Location = new Point(1387, 42);
+            label4.Location = new Point(1387, 46);
             label4.Name = "label4";
             label4.Size = new Size(32, 32);
             label4.TabIndex = 5;
@@ -159,6 +159,7 @@
             label6.Size = new Size(133, 32);
             label6.TabIndex = 3;
             label6.Text = "Quantity";
+            label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -202,7 +203,7 @@
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
             Name = "CartUserControl";
-            Size = new Size(2119, 179);
+            Size = new Size(2119, 188);
             Load += CartUserControl_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

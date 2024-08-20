@@ -43,6 +43,7 @@ namespace OrderAndDeliveryManagement
             delete_button.Visible = false;
             delete_label.Visible = false;
             refresh_2.Visible = false;
+            label2.Text = "Menu";
 
             panel3.Controls.Add(button5);
             panel3.Controls.Add(label2);
@@ -63,7 +64,8 @@ namespace OrderAndDeliveryManagement
                         ProductName = reader["Name"].ToString(),
                         ProductDescription = reader["Description"].ToString(),
                         ProductPrice = Convert.ToDecimal(reader["Price"]),
-                        ProductImage = Resources.small_icon1 // Assuming you have a default icon for products
+                        ProductImage = Resources.new_product,
+                        per = reader["Per"].ToString(),
                     };
 
 
@@ -143,6 +145,24 @@ namespace OrderAndDeliveryManagement
                         Status = reader["Status"].ToString(),
                         OrderDate = reader["OrderDate"].ToString(),
                     };
+
+                    // Check if the order status is "Delivered"
+                    if (orderControl.Status == "Delivered")
+                    {
+                        orderControl.ProductImage = Properties.Resources.delivered_icon;
+                    }
+                    else if (orderControl.Status == "Shipped")
+                    {
+                        orderControl.ProductImage = Properties.Resources.shipped_icon;
+                    }
+                    else if (orderControl.Status == "Placed")
+                    {
+                        orderControl.ProductImage = Properties.Resources.order128;
+                    }
+                    else
+                    {
+                        orderControl.ProductImage = Properties.Resources.processing_icon;
+                    }
 
                     flowLayoutPanel1.Controls.Add(orderControl);
                 }

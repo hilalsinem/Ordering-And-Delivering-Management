@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Info;
+            panel1.BackColor = Color.FromArgb(0, 136, 145);
             panel1.Controls.Add(title_label);
             panel1.Controls.Add(pictureBox2);
             panel1.Dock = DockStyle.Top;
@@ -75,21 +75,22 @@
             // 
             message_label.BackColor = Color.Transparent;
             message_label.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            message_label.ForeColor = SystemColors.Info;
+            message_label.ForeColor = Color.FromArgb(15, 48, 87);
             message_label.Location = new Point(488, 368);
             message_label.Name = "message_label";
             message_label.Size = new Size(454, 191);
             message_label.TabIndex = 1;
             message_label.Text = "label1";
+            message_label.Click += message_label_Click;
             // 
             // buttonOK
             // 
             buttonOK.BackColor = Color.FromArgb(15, 48, 87);
             buttonOK.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonOK.ForeColor = SystemColors.Info;
-            buttonOK.Location = new Point(766, 659);
+            buttonOK.Location = new Point(756, 653);
             buttonOK.Name = "buttonOK";
-            buttonOK.Size = new Size(150, 46);
+            buttonOK.Size = new Size(160, 52);
             buttonOK.TabIndex = 3;
             buttonOK.Text = "OK";
             buttonOK.UseVisualStyleBackColor = false;
@@ -98,10 +99,11 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.confetti;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = Properties.Resources.help_icon;
             pictureBox1.Location = new Point(58, 291);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(286, 279);
+            pictureBox1.Size = new Size(279, 279);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -110,7 +112,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.output_onlinepngtools;
+            BackColor = Color.FromArgb(215, 231, 222);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1017, 773);
             Controls.Add(pictureBox1);

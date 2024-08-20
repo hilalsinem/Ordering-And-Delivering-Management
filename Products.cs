@@ -27,12 +27,37 @@ namespace OrderAndDeliveryManagement
 
         }
 
+        private string CapitalizeFirstLetter(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return string.Empty; // Return an empty string if input is null or empty
+            }
+
+            // Convert the first letter to uppercase and concatenate it with the rest of the string
+            return char.ToUpper(input[0]) + input.Substring(1).ToLower();
+        }
+
+
+
+        private decimal price
+        {
+            get => decimal.Parse(textBox2.Text);
+            set => textBox2.Text = value.ToString();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            Image errorIcon = Properties.Resources.error;
 
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(richTextBox1.Text))
             {
-                MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CustomMessageBox.Show("ERROR", "Please fill in all fields.", errorIcon);
+                return;
+            }
+            else if (price == 0)
+            {
+                CustomMessageBox.Show("ERROR", "Please set a price value different than 0 (zero)",errorIcon);
                 return;
             }
 
@@ -45,6 +70,8 @@ namespace OrderAndDeliveryManagement
             checkCmd.Parameters.AddWithValue("@Name", productName);
             int productExists = (int)checkCmd.ExecuteScalar();
             con.Close();
+            string inputPer = textBox3.Text;
+            string formattedPer= CapitalizeFirstLetter(inputPer);
 
             if (productExists > 0)
             {
@@ -55,10 +82,12 @@ namespace OrderAndDeliveryManagement
             {
                 // Insert the new product into the database
                 con.Open();
-                SqlCommand cnn = new SqlCommand("Insert into ProductTable values (@Product_Name, @Price, @Description)", con);
+                SqlCommand cnn = new SqlCommand("Insert into ProductTable values (@Product_Name, @Price, @Per, @Description)", con);
                 cnn.Parameters.AddWithValue("@Product_Name", productName);
                 cnn.Parameters.AddWithValue("@Price", decimal.Parse(textBox2.Text));
                 cnn.Parameters.AddWithValue("@Description", richTextBox1.Text);
+                cnn.Parameters.AddWithValue("@Per", formattedPer);
+
                 cnn.ExecuteNonQuery();
                 textBox1.Clear();
                 textBox2.Clear();

@@ -37,5 +37,10 @@ namespace OrderAndDeliveryManagement
         {
             this.Close();
         }
+
+        private void message_label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
