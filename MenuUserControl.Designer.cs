@@ -77,9 +77,9 @@ namespace OrderAndDeliveryManagement
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.1572323F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.8427658F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 692F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.6361027F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.3639F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 766F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 266F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 155F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 139F));
@@ -89,11 +89,11 @@ namespace OrderAndDeliveryManagement
             tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(comboBox1, 4, 0);
             tableLayoutPanel1.Controls.Add(button1, 5, 0);
-            tableLayoutPanel1.Location = new Point(26, 62);
+            tableLayoutPanel1.Location = new Point(28, 46);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1683, 112);
+            tableLayoutPanel1.Size = new Size(1683, 208);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -102,7 +102,7 @@ namespace OrderAndDeliveryManagement
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(231, 231, 222);
-            label1.Location = new Point(209, 37);
+            label1.Location = new Point(158, 85);
             label1.Name = "label1";
             label1.Size = new Size(119, 38);
             label1.TabIndex = 1;
@@ -111,15 +111,16 @@ namespace OrderAndDeliveryManagement
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(231, 231, 222);
-            label2.Location = new Point(716, 37);
+            label2.Location = new Point(359, 0);
             label2.Name = "label2";
-            label2.Size = new Size(119, 38);
+            label2.Size = new Size(760, 208);
             label2.TabIndex = 3;
             label2.Text = "label2";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -127,7 +128,7 @@ namespace OrderAndDeliveryManagement
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(231, 231, 222);
-            label3.Location = new Point(1195, 37);
+            label3.Location = new Point(1195, 85);
             label3.Name = "label3";
             label3.Size = new Size(119, 38);
             label3.TabIndex = 4;
@@ -138,7 +139,7 @@ namespace OrderAndDeliveryManagement
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.new_product;
-            pictureBox1.Location = new Point(22, 24);
+            pictureBox1.Location = new Point(8, 72);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 64);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -153,7 +154,7 @@ namespace OrderAndDeliveryManagement
             comboBox1.ForeColor = Color.FromArgb(231, 231, 222);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-            comboBox1.Location = new Point(1426, 33);
+            comboBox1.Location = new Point(1426, 81);
             comboBox1.MaxDropDownItems = 10;
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(78, 45);
@@ -167,7 +168,7 @@ namespace OrderAndDeliveryManagement
             button1.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(0, 136, 145);
             button1.Image = Properties.Resources.add_cart;
-            button1.Location = new Point(1565, 22);
+            button1.Location = new Point(1565, 70);
             button1.Name = "button1";
             button1.Size = new Size(95, 67);
             button1.TabIndex = 0;
@@ -181,9 +182,9 @@ namespace OrderAndDeliveryManagement
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label7);
-            panel1.Location = new Point(29, 19);
+            panel1.Location = new Point(31, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1680, 37);
+            panel1.Size = new Size(1680, 44);
             panel1.TabIndex = 4;
             // 
             // label6
@@ -191,7 +192,7 @@ namespace OrderAndDeliveryManagement
             label6.AutoSize = true;
             label6.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.Info;
-            label6.Location = new Point(1394, 5);
+            label6.Location = new Point(1423, 5);
             label6.Name = "label6";
             label6.Size = new Size(133, 32);
             label6.TabIndex = 3;
@@ -214,7 +215,7 @@ namespace OrderAndDeliveryManagement
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Info;
-            label4.Location = new Point(680, 0);
+            label4.Location = new Point(635, 0);
             label4.Name = "label4";
             label4.Size = new Size(173, 32);
             label4.TabIndex = 1;
@@ -225,7 +226,7 @@ namespace OrderAndDeliveryManagement
             label7.AutoSize = true;
             label7.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.Info;
-            label7.Location = new Point(218, 0);
+            label7.Location = new Point(155, 5);
             label7.Name = "label7";
             label7.Size = new Size(121, 32);
             label7.TabIndex = 0;
@@ -238,7 +239,7 @@ namespace OrderAndDeliveryManagement
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
             Name = "MenuUserControl";
-            Size = new Size(1714, 186);
+            Size = new Size(1714, 257);
             Load += MenuUserControl_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

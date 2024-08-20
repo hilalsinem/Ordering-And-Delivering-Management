@@ -77,9 +77,9 @@
             label6.BackColor = Color.FromArgb(205, 239, 255);
             label6.Font = new Font("Lucida Fax", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(15, 48, 66);
-            label6.Location = new Point(670, 525);
+            label6.Location = new Point(641, 525);
             label6.Name = "label6";
-            label6.Size = new Size(510, 245);
+            label6.Size = new Size(572, 245);
             label6.TabIndex = 6;
             label6.Text = "label6";
             // 
@@ -122,9 +122,9 @@
             listView1.BackColor = Color.FromArgb(205, 239, 255);
             listView1.Font = new Font("Lucida Fax", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listView1.ForeColor = Color.FromArgb(15, 48, 66);
-            listView1.Location = new Point(538, 182);
+            listView1.Location = new Point(541, 182);
             listView1.Name = "listView1";
-            listView1.Size = new Size(710, 245);
+            listView1.Size = new Size(789, 284);
             listView1.TabIndex = 10;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;

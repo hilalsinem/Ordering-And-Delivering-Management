@@ -52,19 +52,19 @@
             // 
             // title_label
             // 
-            title_label.BackColor = Color.FromArgb(15, 48, 87);
+            title_label.BackColor = Color.FromArgb(0, 136, 145);
             title_label.Font = new Font("Lucida Fax", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title_label.ForeColor = SystemColors.Info;
-            title_label.Location = new Point(159, 27);
+            title_label.Location = new Point(130, 9);
             title_label.Name = "title_label";
-            title_label.Size = new Size(846, 64);
+            title_label.Size = new Size(875, 100);
             title_label.TabIndex = 0;
             title_label.Text = "label2";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.aryom_logo;
-            pictureBox2.Location = new Point(37, 12);
+            pictureBox2.Location = new Point(21, 9);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(103, 100);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -85,7 +85,7 @@
             // 
             // buttonOK
             // 
-            buttonOK.BackColor = Color.FromArgb(15, 48, 87);
+            buttonOK.BackColor = Color.FromArgb(0, 136, 145);
             buttonOK.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonOK.ForeColor = SystemColors.Info;
             buttonOK.Location = new Point(756, 653);

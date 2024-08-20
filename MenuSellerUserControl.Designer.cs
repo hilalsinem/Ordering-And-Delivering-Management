@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            label8 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            label8 = new Label();
             label3 = new Label();
             panel1 = new Panel();
             label6 = new Label();
@@ -47,52 +47,41 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.04292F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.9570847F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 678F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 308F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.3649845F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.63502F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 883F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 231F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 172F));
             tableLayoutPanel1.Controls.Add(label2, 2, 0);
             tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(label1, 1, 0);
             tableLayoutPanel1.Controls.Add(label8, 4, 0);
             tableLayoutPanel1.Controls.Add(label3, 3, 0);
-            tableLayoutPanel1.Location = new Point(47, 58);
+            tableLayoutPanel1.Location = new Point(41, 46);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1605, 163);
+            tableLayoutPanel1.Size = new Size(1660, 192);
             tableLayoutPanel1.TabIndex = 1;
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.None;
-            label8.AutoSize = true;
-            label8.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(231, 231, 222);
-            label8.Location = new Point(1465, 65);
-            label8.Name = "label8";
-            label8.Size = new Size(107, 33);
-            label8.TabIndex = 6;
-            label8.Text = "label8";
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(231, 231, 222);
-            label2.Location = new Point(731, 65);
+            label2.Location = new Point(376, 0);
             label2.Name = "label2";
-            label2.Size = new Size(107, 33);
+            label2.Size = new Size(877, 192);
             label2.TabIndex = 3;
             label2.Text = "label2";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.new_product;
-            pictureBox1.Location = new Point(35, 49);
+            pictureBox1.Location = new Point(7, 64);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 64);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -105,12 +94,24 @@
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(231, 231, 222);
-            label1.Location = new Point(236, 65);
+            label1.Location = new Point(172, 79);
             label1.Name = "label1";
             label1.Size = new Size(107, 33);
             label1.TabIndex = 1;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.None;
+            label8.AutoSize = true;
+            label8.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(231, 231, 222);
+            label8.Location = new Point(1520, 79);
+            label8.Name = "label8";
+            label8.Size = new Size(107, 33);
+            label8.TabIndex = 6;
+            label8.Text = "label8";
             // 
             // label3
             // 
@@ -118,7 +119,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(231, 231, 222);
-            label3.Location = new Point(1224, 65);
+            label3.Location = new Point(1318, 79);
             label3.Name = "label3";
             label3.Size = new Size(107, 33);
             label3.TabIndex = 4;
@@ -132,9 +133,9 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label7);
-            panel1.Location = new Point(50, 15);
+            panel1.Location = new Point(44, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1602, 37);
+            panel1.Size = new Size(1657, 37);
             panel1.TabIndex = 5;
             // 
             // label6
@@ -142,7 +143,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.Info;
-            label6.Location = new Point(1482, 0);
+            label6.Location = new Point(1543, 0);
             label6.Name = "label6";
             label6.Size = new Size(57, 32);
             label6.TabIndex = 3;
@@ -153,7 +154,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.Info;
-            label5.Location = new Point(1233, 0);
+            label5.Location = new Point(1341, 0);
             label5.Name = "label5";
             label5.Size = new Size(81, 32);
             label5.TabIndex = 2;
@@ -164,7 +165,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Info;
-            label4.Location = new Point(696, 0);
+            label4.Location = new Point(748, 0);
             label4.Name = "label4";
             label4.Size = new Size(173, 32);
             label4.TabIndex = 1;
@@ -176,7 +177,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Lucida Fax", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.Info;
-            label7.Location = new Point(232, 0);
+            label7.Location = new Point(155, 0);
             label7.Name = "label7";
             label7.Size = new Size(121, 32);
             label7.TabIndex = 0;
@@ -189,7 +190,7 @@
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
             Name = "MenuSellerUserControl";
-            Size = new Size(1691, 241);
+            Size = new Size(1715, 241);
             Load += MenuSellerUserControl_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

@@ -31,22 +31,62 @@ namespace OrderAndDeliveryManagement
 
         private void addToTheTable()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-BKKQ3CK\SQLSERVER;Initial Catalog=dbonline;User ID=sa;Password=Sinem*2002;Trust Server Certificate=True");
+            Image errorIcon = Properties.Resources.error_icon;
+            try
+            {
+                long cardNumber;
+                int CVV;
 
-            // ADD TO THE TABLE
-            conn.Open();
-            SqlCommand checkCmd = new SqlCommand("SELECT username FROM LoginTable", conn);
-            string username = (string)checkCmd.ExecuteScalar();
-            conn.Close();
+                // Validate if the card number is numeric and 16 digits
+                if (!long.TryParse(textBox2.Text, out cardNumber))
+                {
+                    CustomMessageBox.Show("ERROR", "Card Number must consist of numbers.", errorIcon);
+                    return;
+                }
+                if(textBox2.Text.Length != 16)
+                {
+                    CustomMessageBox.Show("ERROR", "Card Number must be exactly 16 digits.", errorIcon);
+                    return;
+                }
 
-            conn.Open();
-            SqlCommand cnn = new SqlCommand("Insert into CreditCardTable values (@username, @Card_Name, @Card_Number, @CVV)", conn);
-            cnn.Parameters.AddWithValue("@username", username);
-            cnn.Parameters.AddWithValue("@Card_Name", textBox1.Text);
-            cnn.Parameters.AddWithValue("@Card_Number", textBox2.Text);
-            cnn.Parameters.AddWithValue("@CVV", textBox3.Text);
-            cnn.ExecuteNonQuery();
-            conn.Close();
+                if (!int.TryParse(textBox3.Text, out CVV) || textBox3.Text.Length != 3)
+                {
+                    MessageBox.Show("CVV must be exactly 3 digits.", "Invalid CVV", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-BKKQ3CK\SQLSERVER;Initial Catalog=dbonline;User ID=sa;Password=Sinem*2002;Trust Server Certificate=True");
+
+                // ADD TO THE TABLE
+                conn.Open();
+                SqlCommand checkCmd = new SqlCommand("SELECT username FROM LoginTable", conn);
+                string username = (string)checkCmd.ExecuteScalar();
+                conn.Close();
+
+                conn.Open();
+                SqlCommand cnn = new SqlCommand("Insert into CreditCardTable values (@username, @CardName, @CardNumber, @CVV)", conn);
+                cnn.Parameters.AddWithValue("@username", username);
+                cnn.Parameters.AddWithValue("@CardName", textBox1.Text);
+                cnn.Parameters.AddWithValue("@CardNumber", cardNumber);
+                cnn.Parameters.AddWithValue("@CVV", CVV);
+                cnn.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (FormatException ex)
+            {
+                
+                CustomMessageBox.Show("ERROR", "Invalid input format.\nPlease make sure you entered the correct data types.",errorIcon);
+            }
+            catch (SqlException ex)
+            {
+                
+                CustomMessageBox.Show(" SQL ERROR", "A database error occurred", errorIcon);
+                
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show("ERROR: ", ex.Message, errorIcon);
+            }
         }
         private void deleteFromTheTable()
         {

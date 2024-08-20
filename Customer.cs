@@ -103,6 +103,8 @@ namespace OrderAndDeliveryManagement
         {
             LoadCartItems();
         }
+
+        bool CartEmpty = true;
         private void LoadCartItems()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -150,6 +152,10 @@ namespace OrderAndDeliveryManagement
                         per = reader2["Per"].ToString(),
 
                     };
+                    if(cartTable != null)
+                    {
+                        CartEmpty = false;
+                    }
 
 
                     flowLayoutPanel1.Controls.Add(cartTable);
@@ -174,6 +180,12 @@ namespace OrderAndDeliveryManagement
         public void LoadOrderItems()
         {
             flowLayoutPanel1.Controls.Clear();
+            if (CartEmpty)
+            {
+                Image errorIcon = Properties.Resources.error_icon;
+                CustomMessageBox.Show("EMPTY CART", "It seems like you do not have any item on your cart.\nGo to the Menu tab and start adding items to your cart.", errorIcon);
+                return;
+            }
             panel3.Visible = true;
             title_label.Visible = true;
             title_label.Text = "My Orders";
@@ -202,6 +214,7 @@ namespace OrderAndDeliveryManagement
             flowLayoutPanel1.Controls.Add(payment_panel);
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-BKKQ3CK\SQLSERVER;Initial Catalog=dbonline;User ID=sa;Password=Sinem*2002;Trust Server Certificate=True");
 
+            
             conn.Open();
             SqlCommand checkCmd = new SqlCommand("SELECT username FROM LoginTable", conn);
             string username = (string)checkCmd.ExecuteScalar();
@@ -493,12 +506,13 @@ namespace OrderAndDeliveryManagement
 
 
             conn.Open();
-            SqlCommand insertCmd = new SqlCommand("INSERT INTO OrderTable (Id, username, TotalPrice, OrderDate, Status) VALUES (@Id, @username, @TotalPrice, @OrderDate, @Status)", conn);
+            SqlCommand insertCmd = new SqlCommand("INSERT INTO OrderTable (Id, username, TotalPrice, OrderDate, Status, PaymentMethod) VALUES (@Id, @username, @TotalPrice, @OrderDate, @Status, @PaymentMethod)", conn);
             insertCmd.Parameters.AddWithValue("@Id", Id);
             insertCmd.Parameters.AddWithValue("@username", username);
             insertCmd.Parameters.AddWithValue("@TotalPrice", totalPrice);
             insertCmd.Parameters.AddWithValue("@OrderDate", formattedOrderTime);
             insertCmd.Parameters.AddWithValue("@Status", status);
+            insertCmd.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
             insertCmd.ExecuteNonQuery();
             conn.Close();
 

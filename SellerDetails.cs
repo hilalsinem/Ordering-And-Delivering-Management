@@ -27,7 +27,7 @@ namespace OrderAndDeliveryManagement
         }
         public string Address { get; set; }
         public string PaymentMethod { get; set; }
-        public List<Tuple<string, int, decimal>> Products { get; set; }
+        public List<Tuple<string, int, decimal, string>> Products { get; set; }
 
 
         private void SellerDetails_Load(object sender, EventArgs e)
@@ -41,15 +41,15 @@ namespace OrderAndDeliveryManagement
         private void InitializeListView()
         {
             listView1.View = View.Details; // Set the view to Details
-            listView1.Columns.Add("Product Name", 250); // Width in pixels
+            listView1.Columns.Add("Product Name", 230); // Width in pixels
             listView1.Columns.Add("Quantity", 200);
             listView1.Columns.Add("Price", 200);
-            listView1.Columns.Add("Per", 100);
+            listView1.Columns.Add("Per", 200);
         }
 
         public void LoadOrderDetails()
         {
-            string query = "SELECT Name, Quantity, Price, Address, PaymentMethod FROM OrderDetailsTable WHERE Id = @Id";
+            string query = "SELECT Name, Quantity, Price, Address, PaymentMethod, Per FROM OrderDetailsTable WHERE Id = @Id";
 
             try
             {
