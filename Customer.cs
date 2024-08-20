@@ -379,7 +379,7 @@ namespace OrderAndDeliveryManagement
             else
             {
                 Image helpIcon = Properties.Resources.help;
-                CustomMessageBox.Show("Alert", "Please select an option before confirming.",helpIcon);
+                CustomMessageBox.Show("Alert", "Please select an option before confirming.", helpIcon);
                 return null; // Exit the method if no option is selected.
             }
         }
@@ -496,7 +496,7 @@ namespace OrderAndDeliveryManagement
 
             Image partyIcon = Properties.Resources.party_popper;
             CustomMessageBox.Show(title, message, partyIcon);
-           
+
         }
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
@@ -512,6 +512,11 @@ namespace OrderAndDeliveryManagement
         private void refresh_order_button_Click(object sender, EventArgs e)
         {
             LoadOrders();
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

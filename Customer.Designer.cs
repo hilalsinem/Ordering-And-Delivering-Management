@@ -52,11 +52,13 @@
             label3 = new Label();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             payment_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -156,6 +158,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1752, 1114);
             flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel3
             // 
@@ -179,10 +182,10 @@
             // 
             refresh_order_button.FlatAppearance.BorderSize = 0;
             refresh_order_button.FlatStyle = FlatStyle.Popup;
-            refresh_order_button.Image = Properties.Resources.rotate_arrow1;
-            refresh_order_button.Location = new Point(263, 16);
+            refresh_order_button.Image = Properties.Resources.updated;
+            refresh_order_button.Location = new Point(263, 13);
             refresh_order_button.Name = "refresh_order_button";
-            refresh_order_button.Size = new Size(89, 74);
+            refresh_order_button.Size = new Size(99, 89);
             refresh_order_button.TabIndex = 10;
             refresh_order_button.UseVisualStyleBackColor = true;
             refresh_order_button.Visible = false;
@@ -192,10 +195,10 @@
             // 
             refresh_button.FlatAppearance.BorderSize = 0;
             refresh_button.FlatStyle = FlatStyle.Popup;
-            refresh_button.Image = Properties.Resources.rotate_arrow1;
+            refresh_button.Image = Properties.Resources.updated;
             refresh_button.Location = new Point(263, 16);
             refresh_button.Name = "refresh_button";
-            refresh_button.Size = new Size(89, 74);
+            refresh_button.Size = new Size(92, 86);
             refresh_button.TabIndex = 9;
             refresh_button.UseVisualStyleBackColor = true;
             refresh_button.Visible = false;
@@ -230,10 +233,10 @@
             // 
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Popup;
-            button7.Image = Properties.Resources.rotate_arrow1;
+            button7.Image = Properties.Resources.updated;
             button7.Location = new Point(263, 16);
             button7.Name = "button7";
-            button7.Size = new Size(89, 74);
+            button7.Size = new Size(99, 82);
             button7.TabIndex = 6;
             button7.UseVisualStyleBackColor = true;
             button7.Visible = false;
@@ -269,7 +272,6 @@
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Popup;
-            button6.Image = Properties.Resources.rotate_arrow1;
             button6.Location = new Point(263, 16);
             button6.Name = "button6";
             button6.Size = new Size(89, 74);
@@ -293,14 +295,14 @@
             // 
             // payment_panel
             // 
+            payment_panel.Controls.Add(pictureBox1);
             payment_panel.Controls.Add(confirm_button);
             payment_panel.Controls.Add(label3);
             payment_panel.Controls.Add(radioButton2);
             payment_panel.Controls.Add(radioButton1);
-            payment_panel.Dock = DockStyle.Bottom;
             payment_panel.Location = new Point(3, 114);
             payment_panel.Name = "payment_panel";
-            payment_panel.Size = new Size(1597, 200);
+            payment_panel.Size = new Size(1718, 184);
             payment_panel.TabIndex = 1;
             payment_panel.Visible = false;
             // 
@@ -323,7 +325,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(231, 231, 222);
-            label3.Location = new Point(168, 93);
+            label3.Location = new Point(378, 78);
             label3.Name = "label3";
             label3.Size = new Size(119, 38);
             label3.TabIndex = 3;
@@ -336,7 +338,7 @@
             radioButton2.AutoSize = true;
             radioButton2.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             radioButton2.ForeColor = Color.FromArgb(231, 231, 222);
-            radioButton2.Location = new Point(747, 119);
+            radioButton2.Location = new Point(830, 127);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(115, 36);
             radioButton2.TabIndex = 1;
@@ -351,7 +353,7 @@
             radioButton1.AutoSize = true;
             radioButton1.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             radioButton1.ForeColor = Color.FromArgb(231, 231, 222);
-            radioButton1.Location = new Point(747, 28);
+            radioButton1.Location = new Point(830, 27);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(212, 36);
             radioButton1.TabIndex = 0;
@@ -361,6 +363,15 @@
             radioButton1.Visible = false;
             radioButton1.CheckedChanged += radioButton1_CheckedChanged_1;
             radioButton1.Click += radioButton1_CheckedChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.cashless_payment;
+            pictureBox1.Location = new Point(140, 49);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(94, 75);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // Customer
             // 
@@ -382,6 +393,7 @@
             panel3.PerformLayout();
             payment_panel.ResumeLayout(false);
             payment_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -410,5 +422,6 @@
         private Button confirm_button;
         private Label label3;
         private Button refresh_order_button;
+        private PictureBox pictureBox1;
     }
 }

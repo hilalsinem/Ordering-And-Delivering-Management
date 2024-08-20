@@ -83,6 +83,16 @@ namespace OrderAndDeliveryManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cashless_payment {
+            get {
+                object obj = ResourceManager.GetObject("cashless-payment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Designer {
             get {
                 object obj = ResourceManager.GetObject("Designer", resourceCulture);
@@ -199,39 +209,13 @@ namespace OrderAndDeliveryManagement.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tracking_icon1
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("tracking_icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap small_icon
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("small_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rotate_arrow1
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("rotate_arrow1", resourceCulture);
+        internal static System.Drawing.Bitmap updated {
+            get {
+                object obj = ResourceManager.GetObject("updated", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
