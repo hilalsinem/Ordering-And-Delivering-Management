@@ -15,12 +15,6 @@ namespace OrderAndDeliveryManagement
         public CustomMessageBox()
         {
             InitializeComponent();
-
-        }
-
-        private void buttonOk_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         public static void Show(string title, string message, Image icon)
@@ -33,14 +27,15 @@ namespace OrderAndDeliveryManagement
                 messageBox.ShowDialog();
             }
         }
+
         private void SetIcon(Image icon)
         {
             pictureBox1.Image = icon;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void buttonOK_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -45,14 +45,13 @@
             button7 = new Button();
             delete_label = new Label();
             delete_button = new Button();
-            button6 = new Button();
             title_label = new Label();
             payment_panel = new Panel();
+            pictureBox1 = new PictureBox();
             confirm_button = new Button();
             label3 = new Label();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -170,7 +169,6 @@
             panel3.Controls.Add(button7);
             panel3.Controls.Add(delete_label);
             panel3.Controls.Add(delete_button);
-            panel3.Controls.Add(button6);
             panel3.Controls.Add(title_label);
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
@@ -181,11 +179,11 @@
             // refresh_order_button
             // 
             refresh_order_button.FlatAppearance.BorderSize = 0;
-            refresh_order_button.FlatStyle = FlatStyle.Popup;
+            refresh_order_button.FlatStyle = FlatStyle.Flat;
             refresh_order_button.Image = Properties.Resources.updated;
-            refresh_order_button.Location = new Point(263, 13);
+            refresh_order_button.Location = new Point(262, 22);
             refresh_order_button.Name = "refresh_order_button";
-            refresh_order_button.Size = new Size(99, 89);
+            refresh_order_button.Size = new Size(72, 72);
             refresh_order_button.TabIndex = 10;
             refresh_order_button.UseVisualStyleBackColor = true;
             refresh_order_button.Visible = false;
@@ -194,14 +192,15 @@
             // refresh_button
             // 
             refresh_button.FlatAppearance.BorderSize = 0;
-            refresh_button.FlatStyle = FlatStyle.Popup;
+            refresh_button.FlatStyle = FlatStyle.Flat;
             refresh_button.Image = Properties.Resources.updated;
-            refresh_button.Location = new Point(263, 16);
+            refresh_button.Location = new Point(262, 18);
             refresh_button.Name = "refresh_button";
-            refresh_button.Size = new Size(92, 86);
+            refresh_button.Size = new Size(72, 72);
             refresh_button.TabIndex = 9;
             refresh_button.UseVisualStyleBackColor = true;
             refresh_button.Visible = false;
+            refresh_button.Click += refresh_button_Click;
             // 
             // order_label
             // 
@@ -232,11 +231,11 @@
             // button7
             // 
             button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Popup;
+            button7.FlatStyle = FlatStyle.Flat;
             button7.Image = Properties.Resources.updated;
-            button7.Location = new Point(263, 16);
+            button7.Location = new Point(262, 18);
             button7.Name = "button7";
-            button7.Size = new Size(99, 82);
+            button7.Size = new Size(72, 72);
             button7.TabIndex = 6;
             button7.UseVisualStyleBackColor = true;
             button7.Visible = false;
@@ -268,18 +267,6 @@
             delete_button.Visible = false;
             delete_button.Click += button5_Click;
             // 
-            // button6
-            // 
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Popup;
-            button6.Location = new Point(263, 16);
-            button6.Name = "button6";
-            button6.Size = new Size(89, 74);
-            button6.TabIndex = 3;
-            button6.UseVisualStyleBackColor = true;
-            button6.Visible = false;
-            button6.Click += button6_Click;
-            // 
             // title_label
             // 
             title_label.AutoSize = true;
@@ -306,16 +293,26 @@
             payment_panel.TabIndex = 1;
             payment_panel.Visible = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.cashless_payment__1_;
+            pictureBox1.Location = new Point(129, 27);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(129, 135);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // confirm_button
             // 
-            confirm_button.FlatStyle = FlatStyle.Popup;
+            confirm_button.BackgroundImage = Properties.Resources.order_now;
+            confirm_button.BackgroundImageLayout = ImageLayout.Stretch;
+            confirm_button.FlatStyle = FlatStyle.Flat;
             confirm_button.Font = new Font("Lucida Fax", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            confirm_button.ForeColor = Color.FromArgb(231, 231, 222);
-            confirm_button.Location = new Point(1318, 78);
+            confirm_button.ForeColor = Color.FromArgb(0, 136, 145);
+            confirm_button.Location = new Point(1250, 32);
             confirm_button.Name = "confirm_button";
-            confirm_button.Size = new Size(150, 46);
+            confirm_button.Size = new Size(168, 130);
             confirm_button.TabIndex = 4;
-            confirm_button.Text = "Confirm";
             confirm_button.UseVisualStyleBackColor = true;
             confirm_button.Visible = false;
             confirm_button.Click += confirm_button_Click;
@@ -364,15 +361,6 @@
             radioButton1.CheckedChanged += radioButton1_CheckedChanged_1;
             radioButton1.Click += radioButton1_CheckedChanged;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.cashless_payment;
-            pictureBox1.Location = new Point(140, 49);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(94, 75);
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // Customer
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -409,7 +397,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel3;
         private Label title_label;
-        private Button button6;
         private Button delete_button;
         private Label delete_label;
         private Button button7;

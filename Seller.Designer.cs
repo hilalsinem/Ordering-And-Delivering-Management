@@ -194,7 +194,6 @@
             // 
             refresh_2.FlatAppearance.BorderSize = 0;
             refresh_2.FlatStyle = FlatStyle.Popup;
-            refresh_2.Image = Properties.Resources.rotate_arrow1;
             refresh_2.Location = new Point(220, 11);
             refresh_2.Name = "refresh_2";
             refresh_2.Size = new Size(89, 74);
@@ -207,7 +206,6 @@
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Popup;
-            button6.Image = Properties.Resources.rotate_arrow1;
             button6.Location = new Point(220, 11);
             button6.Name = "button6";
             button6.Size = new Size(89, 74);

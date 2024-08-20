@@ -26,7 +26,8 @@ namespace OrderAndDeliveryManagement
 
             if (string.IsNullOrWhiteSpace(comboBox1.Text) || !int.TryParse(comboBox1.Text, out int quantity) || quantity <= 0)
             {
-                MessageBox.Show("You should select a valid quantity to add to your cart", "No quantity selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Image infoIcon = Properties.Resources.informative__1_;
+                CustomMessageBox.Show("WARNING", "You should select a valid quantity to add to your cart", infoIcon);
                 return; // Exit the method if no valid quantity is selected
             }
 
@@ -57,7 +58,8 @@ namespace OrderAndDeliveryManagement
 
                 if (productDoubles > 0)
                 {
-                    MessageBox.Show("You have already added this item to your cart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Image errorIcon = Properties.Resources.error;
+                    CustomMessageBox.Show("ERROR", "You have already added this item to your cart", errorIcon);
                     con.Close();
                 }
 
@@ -65,7 +67,7 @@ namespace OrderAndDeliveryManagement
                 {
                     Image partyIcon = Properties.Resources.party_popper;
 
-                    CustomMessageBox.Show("Successful", "Item is added to yor cart. You can view items and complete your order from your cart menu", partyIcon);
+                    CustomMessageBox.Show("SUCCESSFUL", "Item is added to yor cart. You can view items and complete your order from your cart menu", partyIcon);
 
                     // Insert the new product into the database
                     con.Open();
@@ -85,7 +87,6 @@ namespace OrderAndDeliveryManagement
                 Image errorIcon = Properties.Resources.error1;
                 // Notify the user that the product does not exist
                 CustomMessageBox.Show("Error", "This product does not exist in the menu.", errorIcon);
-                MessageBox.Show("The product does not exist in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             con.Close();

@@ -62,15 +62,15 @@ namespace OrderAndDeliveryManagement
             label2 = new Label();
             label3 = new Label();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             comboBox1 = new ComboBox();
+            button1 = new Button();
             panel1 = new Panel();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label7 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,8 +87,8 @@ namespace OrderAndDeliveryManagement
             tableLayoutPanel1.Controls.Add(label2, 2, 0);
             tableLayoutPanel1.Controls.Add(label3, 3, 0);
             tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button1, 5, 0);
             tableLayoutPanel1.Controls.Add(comboBox1, 4, 0);
+            tableLayoutPanel1.Controls.Add(button1, 5, 0);
             tableLayoutPanel1.Location = new Point(26, 62);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -135,26 +135,15 @@ namespace OrderAndDeliveryManagement
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.small_icon;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = Properties.Resources.data;
+            pictureBox1.Location = new Point(36, 24);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(131, 102);
+            pictureBox1.Size = new Size(64, 64);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(15, 48, 87);
-            button1.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(231, 231, 222);
-            button1.Location = new Point(1515, 33);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 46);
-            button1.TabIndex = 0;
-            button1.Text = "Cart";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // comboBox1
             // 
@@ -169,6 +158,20 @@ namespace OrderAndDeliveryManagement
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(78, 45);
             comboBox1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.Transparent;
+            button1.Font = new Font("Lucida Fax", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(231, 231, 222);
+            button1.Image = Properties.Resources.shopping_cart;
+            button1.Location = new Point(1526, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 67);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -237,7 +240,7 @@ namespace OrderAndDeliveryManagement
             Load += MenuUserControl_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            //((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

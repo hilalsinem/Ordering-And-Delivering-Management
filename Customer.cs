@@ -60,16 +60,18 @@ namespace OrderAndDeliveryManagement
             flowLayoutPanel1.Controls.Clear();
             panel3.Visible = true;
             title_label.Visible = true;
-            button6.Visible = true;
             button7.Visible = false;
             delete_label.Visible = false;
             delete_button.Visible = false;
             title_label.Text = "Menu";
             order_label.Visible = false;
             order_button.Visible = false;
+            button7.Visible = true;
+            refresh_button.Visible = false;
+            refresh_order_button.Visible = false;
 
             panel3.Controls.Add(title_label);
-            panel3.Controls.Add(button6);
+            panel3.Controls.Add(button7);
 
             flowLayoutPanel1.Controls.Add(panel3);
 
@@ -96,10 +98,6 @@ namespace OrderAndDeliveryManagement
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            LoadMenuItems();
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -111,16 +109,16 @@ namespace OrderAndDeliveryManagement
             panel3.Visible = true;
             title_label.Visible = true;
             title_label.Text = "My Cart";
-            button7.Visible = true;
-            button6.Visible = false;
+            button7.Visible = false;
             delete_button.Visible = true;
             delete_label.Visible = true;
             order_label.Visible = true;
             order_button.Visible = true;
             refresh_order_button.Visible = false;
+            refresh_button.Visible = true;
 
             panel3.Controls.Add(title_label);
-            panel3.Controls.Add(button7);
+            panel3.Controls.Add(refresh_button);
             panel3.Controls.Add(delete_button);
             panel3.Controls.Add(delete_label);
 
@@ -179,7 +177,6 @@ namespace OrderAndDeliveryManagement
             title_label.Visible = true;
             title_label.Text = "My Orders";
             button7.Visible = false;
-            button6.Visible = false;
             delete_button.Visible = false;
             refresh_button.Visible = true;
             order_button.Visible = false;
@@ -245,12 +242,12 @@ namespace OrderAndDeliveryManagement
             title_label.Visible = true;
             title_label.Text = "My Orders";
             button7.Visible = false;
-            button6.Visible = false;
             delete_button.Visible = false;
             delete_label.Visible = false;
             order_label.Visible = false;
             order_button.Visible = false;
             refresh_order_button.Visible = true;
+            refresh_button.Visible = false;
 
             panel3.Controls.Add(title_label);
             panel3.Controls.Add(refresh_order_button);
@@ -288,7 +285,7 @@ namespace OrderAndDeliveryManagement
 
         private void button7_Click(object sender, EventArgs e)
         {
-            LoadCartItems();
+            LoadMenuItems();
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -379,13 +376,23 @@ namespace OrderAndDeliveryManagement
             else
             {
                 Image helpIcon = Properties.Resources.help;
-                CustomMessageBox.Show("Alert", "Please select an option before confirming.", helpIcon);
+                CustomMessageBox.Show("Alert", "Please select a payment method before confirming.", helpIcon);
                 return null; // Exit the method if no option is selected.
             }
         }
 
         private void confirm_button_Click(object sender, EventArgs e)
         {
+
+            string paymentMethod = radioButton_Selection();
+            // Check if paymentMethod is null (indicating that no option was selected)
+            if (paymentMethod == null)
+            {
+                // Exit the method to prevent further processing
+                return;
+            }
+
+
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-BKKQ3CK\SQLSERVER;Initial Catalog=dbonline;User ID=sa;Password=Sinem*2002;Trust Server Certificate=True");
             int Id = GenerateUniqueOrderId();
 
@@ -401,10 +408,7 @@ namespace OrderAndDeliveryManagement
             string address = (string)cmd3.ExecuteScalar();
             conn.Close();
 
-            string paymentMethod = radioButton_Selection();
-
-
-
+          
 
             decimal totalPrice = 0m;
 
@@ -492,7 +496,7 @@ namespace OrderAndDeliveryManagement
             conn.Close();
 
             string message = "Thank you. We have received your order. You can track your order from 'MY ORDERS' page";
-            string title = "Successful Order";
+            string title = "SUCCESSFUL ORDER";
 
             Image partyIcon = Properties.Resources.party_popper;
             CustomMessageBox.Show(title, message, partyIcon);
@@ -518,6 +522,11 @@ namespace OrderAndDeliveryManagement
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void refresh_button_Click(object sender, EventArgs e)
+        {
+            LoadCartItems();
         }
     }
 }

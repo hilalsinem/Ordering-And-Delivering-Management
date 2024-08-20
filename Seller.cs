@@ -63,7 +63,7 @@ namespace OrderAndDeliveryManagement
                         ProductName = reader["Name"].ToString(),
                         ProductDescription = reader["Description"].ToString(),
                         ProductPrice = Convert.ToDecimal(reader["Price"]),
-                        ProductImage = Resources.small_icon // Assuming you have a default icon for products
+                        ProductImage = Resources.small_icon1 // Assuming you have a default icon for products
                     };
 
 

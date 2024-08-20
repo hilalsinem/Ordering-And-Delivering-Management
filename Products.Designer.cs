@@ -39,7 +39,6 @@
             textBox2 = new TextBox();
             richTextBox1 = new RichTextBox();
             button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
@@ -140,7 +139,7 @@
             button1.BackColor = Color.FromArgb(15, 48, 87);
             button1.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.Info;
-            button1.Location = new Point(389, 847);
+            button1.Location = new Point(798, 847);
             button1.Name = "button1";
             button1.Size = new Size(174, 56);
             button1.TabIndex = 9;
@@ -148,24 +147,12 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(15, 48, 87);
-            button2.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.Info;
-            button2.Location = new Point(792, 847);
-            button2.Name = "button2";
-            button2.Size = new Size(170, 56);
-            button2.TabIndex = 10;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(15, 48, 87);
             button3.Font = new Font("Lucida Fax", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.Info;
-            button3.Location = new Point(1185, 847);
+            button3.Location = new Point(1085, 847);
             button3.Name = "button3";
             button3.Size = new Size(170, 56);
             button3.TabIndex = 11;
@@ -212,7 +199,6 @@
             ClientSize = new Size(1758, 1225);
             Controls.Add(dataGridView1);
             Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(richTextBox1);
             Controls.Add(textBox2);
@@ -242,7 +228,6 @@
         private RichTextBox richTextBox1;
         private Label label4;
         private Button button1;
-        private Button button2;
         private Button button3;
         private DataGridView dataGridView1;
 
