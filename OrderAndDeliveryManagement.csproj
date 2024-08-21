@@ -6,10 +6,16 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>OrderAndDeliveryManagement.Program</StartupObject>
+    <ApplicationIcon>aryomLogo (1).ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resources\icons8-food-tray-64.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="aryomLogo (1).ico" />
   </ItemGroup>
 
   <ItemGroup>
