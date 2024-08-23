@@ -87,4 +87,4 @@ Contributions to this project are welcome! Please follow these steps to contribu
 ## Contact
 For any questions or suggestions, please feel free to reach out:
 - Email: hilalsinemsayar@gmail.com
-- GitHub: hilallsinem
+- Linkedin: [hilallsinem](https://www.linkedin.com/in/hilalsinemsayar/)
